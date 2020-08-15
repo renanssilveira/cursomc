@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.renan.api.domain.Categoria;
-import com.renan.api.services.categoriaservice;
+import com.renan.api.services.Categoriaservice;
 
 @RestController
 @RequestMapping(value="/categorias")
 public class CategoriaResource {
 	
 	@Autowired
-	private categoriaservice services;
+	private Categoriaservice services;
 	
 	@RequestMapping(value="/{id}",method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
@@ -26,4 +26,6 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(obj);    
 		
 	}
+	
+	
 }
